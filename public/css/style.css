@@ -115,3 +115,19 @@ body{
     padding-left: 0;
     padding-right: 0;
 }
+
+/* MAP CSS */
+
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 400px;
+    width: 80vh;
+  }
+  /* gmp-map {
+    height: 400px;
+  } */
+  
+ 
