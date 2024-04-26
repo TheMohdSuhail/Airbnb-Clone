@@ -1,0 +1,18 @@
+<% layout("/layout/boilerplate") %>
+
+<% if (listings.length > 0) { %>
+    <h1>Search Results for "<%= searchTerm %>"</h1>
+    <ul class="listings">
+      <% listings.forEach(listing => { %>
+        <li>
+          <img src="<%= listing.image.url %>" alt="<%= listing.title %>">
+          <h2><%= listing.title %></h2>
+          <p><%= listing.description %></p>
+          <p>Location: <%= listing.location %></p>
+          <p>Price: $<%= listing.price %> per night</p>
+          </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No listings found matching your search criteria.</p>
+  <% } %>

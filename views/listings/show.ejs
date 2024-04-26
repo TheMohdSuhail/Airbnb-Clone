@@ -22,7 +22,7 @@
         </div>
 
         <br>
-        <!-- <% if( currUser && currUser._id.equals(listings.owner.id)){%>
+        <% if( currUser && currUser._id.equals(listings.owner.id)){%>
             <div class="btns">
                 <a href="/listings/<%= listings._id %>/edit" class="btn btn-dark edit-btn col-1 offset-2">Edit</a>
     
@@ -30,15 +30,15 @@
                     <button class="btn btn-dark  offset-3 delete-btn">Delete</button>
                 </form>
             </div>
-       <% }%> -->
+       <% }%>
 
-        <div class="btns">
+        <!-- <div class="btns">
             <a href="/listings/<%= listings._id %>/edit" class="btn btn-dark edit-btn col-1 offset-2">Edit</a>
 
             <form action="/listings/<%= listings._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-dark  offset-3 delete-btn">Delete</button>
             </form>
-        </div>
+        </div> -->
 
        
 
@@ -94,12 +94,13 @@
                             <p class="card-text">
                                 <%= review.rating %> stars
                             </p>
-                            <p class="starability-result card-text" data-rating="<%= review.rating %>">
+                            <p class="starability-result card-text mb-3" data-rating="<%= review.rating %>">
                             </p>
+                            <% if( currUser && currUser._id.equals(review.author.id)){%>
                             <form action="/listings/<%= listings._id %>/reviews/<%= review._id %>?_method=delete" class="mb-3" method="post">
                                 <button class="btn btn-sm btn-dark" >Delete</button>
                             </form>
-                            
+                            <% }%>
                         </div>
                     </div>
                     <% } %>
