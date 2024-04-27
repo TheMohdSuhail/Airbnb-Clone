@@ -1,4 +1,4 @@
-<% layout("/layout/boilerplate") %>
+<% layout("/Layout/boilerplate") %>
 <style>
   #filters{
     display: flex;
@@ -31,30 +31,38 @@
     align-items: center;
 
   }
+/* Adjustments for mobile devices */
+@media (max-width: 576px) {
+  .filter {
+    display: none; /* Hide filter items by default */
+  }
+}
+
 </style>
 <body>
     <!-- <h3>All Listings</h3> -->
     <!-- <form action="/listings/new">
         <button>Create New Listing</button>
     </form> -->
+    
     <div id="filters" data-bs-toggle="collapse">
-      <div class="filter d-none d-lg-block">
+      <div class="filter">
         <div><i class="fa-solid fa-fire"></i></div>
         <p>Trending</p>
       </div>
-      <div class="filter d-none d-lg-block">
+      <div class="filter">
         <div><i class="fa-solid fa-bed"></i></div>
         <p>Rooms</p>
       </div>
-      <div class="filter d-none d-lg-block">
+      <div class="filter">
         <div><i class="fa-solid fa-mountain-city"></i></div>
         <p>Iconic Cities</p>
       </div>
-      <div class="filter d-none d-lg-block">
+      <div class="filter">
         <div><i class="fa-solid fa-mountain"></i></div>
         <p>Mountains</p>
       </div>
-      <div class="filter d-none d-lg-block">
+      <div class="filter ">
         <div><i class="fa-brands fa-fort-awesome"></i></div>
         <p>Castles</p>
       </div>
@@ -124,5 +132,7 @@
 
     }
   });
+
 </script>
+
 
